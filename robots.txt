@@ -1,0 +1,5 @@
+# TEMPLATE TODO: replace the domain below with your own.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml

@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" width="1024" height="1536"
+     role="img" aria-label="Printed menu card">
+  <title>Rosewood Bakery menu card</title>
+
+  <!--
+       PRINTED MENU CARD  ·  shown on the Products page
+
+       This is plain text in a plain file, so you can edit it in any text
+       editor: change a name, change a price, save, refresh.
+
+       Or replace it with a photo of your own printed card: save that as
+       assets/images/menu-card.jpg and point products.html at it instead.
+
+       Note: SVG is XML, so never put two hyphens together inside a comment.
+  -->
+
+  <defs>
+    <linearGradient id="mcGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E8CC72"/>
+      <stop offset="55%"  stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#A5811A"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .serif { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; }
+    .sans  { font-family: Jost, Futura, "Century Gothic", Helvetica, Arial, sans-serif; }
+    .item  { font-size: 27px; fill: #4A3524; }
+    .price { font-size: 27px; fill: #8A6B1E; text-anchor: end; }
+    .cat   { font-size: 33px; fill: #8E2436; letter-spacing: 3px; }
+    .from  { font-size: 19px; fill: #9A8156; text-anchor: end; letter-spacing: 1px; }
+    .rule  { stroke: #D9C79A; stroke-width: 1; }
+  </style>
+
+  <!-- paper -->
+  <rect width="1024" height="1536" fill="#FBF3E4"/>
+  <rect x="26" y="26" width="972" height="1484" fill="none" stroke="url(#mcGold)" stroke-width="3"/>
+  <rect x="40" y="40" width="944" height="1456" fill="none" stroke="url(#mcGold)" stroke-width="1" opacity=".55"/>
+
+  <!-- crest -->
+  <g fill="none" stroke="url(#mcGold)" stroke-width="2" stroke-linecap="round">
+    <path d="M512 152 C 480 152 462 140 454 122"/>
+    <path d="M486 147 c -6 -9 -6 -15 -1 -20"/>
+    <path d="M472 140 c -7 -8 -7 -14 -2 -20"/>
+    <path d="M512 152 C 544 152 562 140 570 122"/>
+    <path d="M538 147 c 6 -9 6 -15 1 -20"/>
+    <path d="M552 140 c 7 -8 7 -14 2 -20"/>
+  </g>
+  <path d="M512 108 l 10 12 -10 12 -10 -12 z" fill="url(#mcGold)"/>
+
+  <!-- name -->
+  <text class="serif" x="512" y="240" text-anchor="middle" fill="url(#mcGold)"
+        font-size="72" letter-spacing="11">ROSEWOOD</text>
+  <text class="sans" x="512" y="290" text-anchor="middle" fill="#8A6B1E"
+        font-size="24" letter-spacing="17">BAKERY</text>
+
+  <line class="rule" x1="330" y1="330" x2="694" y2="330"/>
+  <text class="sans" x="512" y="382" text-anchor="middle" fill="#7A6440"
+        font-size="24" letter-spacing="13">OUR MENU</text>
+
+  <!-- cakes -->
+  <text class="serif cat" x="100" y="470">Cakes</text>
+  <text class="sans from" x="924" y="470">PER 8-INCH</text>
+  <line class="rule" x1="100" y1="486" x2="924" y2="486"/>
+  <text class="serif item" x="100" y="530">Vanilla</text>
+  <text class="serif price" x="924" y="530">$38</text>
+  <text class="serif item" x="100" y="570">Chocolate</text>
+  <text class="serif price" x="924" y="570">$42</text>
+  <text class="serif item" x="100" y="610">Red Velvet</text>
+  <text class="serif price" x="924" y="610">$48</text>
+  <text class="serif item" x="100" y="650">Coffee Tres Leches</text>
+  <text class="serif price" x="924" y="650">$52</text>
+
+  <!-- mini cakes -->
+  <text class="serif cat" x="100" y="736">Mini Cakes</text>
+  <text class="sans from" x="924" y="736">PER BOX</text>
+  <line class="rule" x1="100" y1="752" x2="924" y2="752"/>
+  <text class="serif item" x="100" y="796">Vanilla</text>
+  <text class="serif price" x="924" y="796">$24</text>
+  <text class="serif item" x="100" y="836">Chocolate</text>
+  <text class="serif price" x="924" y="836">$26</text>
+  <text class="serif item" x="100" y="876">Customised</text>
+  <text class="serif price" x="924" y="876">$28</text>
+
+  <!-- brownies -->
+  <text class="serif cat" x="100" y="962">Brownies</text>
+  <text class="sans from" x="924" y="962">EACH</text>
+  <line class="rule" x1="100" y1="978" x2="924" y2="978"/>
+  <text class="serif item" x="100" y="1022">Classic</text>
+  <text class="serif price" x="924" y="1022">$4.50</text>
+  <text class="serif item" x="100" y="1062">Walnut</text>
+  <text class="serif price" x="924" y="1062">$5.50</text>
+  <text class="serif item" x="100" y="1102">Salted Caramel</text>
+  <text class="serif price" x="924" y="1102">$6.00</text>
+
+  <!-- cookies -->
+  <text class="serif cat" x="100" y="1188">Cookies</text>
+  <text class="sans from" x="924" y="1188">HALF DOZEN</text>
+  <line class="rule" x1="100" y1="1204" x2="924" y2="1204"/>
+  <text class="serif item" x="100" y="1248">Choc Chip</text>
+  <text class="serif price" x="924" y="1248">$14</text>
+  <text class="serif item" x="100" y="1288">Double Chocolate</text>
+  <text class="serif price" x="924" y="1288">$16</text>
+
+  <!-- loaf cakes -->
+  <text class="serif cat" x="100" y="1374">Loaf Cakes</text>
+  <text class="sans from" x="924" y="1374">PER LOAF</text>
+  <line class="rule" x1="100" y1="1390" x2="924" y2="1390"/>
+  <text class="serif item" x="100" y="1434">Vanilla, Marble or Chocolate</text>
+  <text class="serif price" x="924" y="1434">from $18</text>
+
+  <text class="sans" x="512" y="1478" text-anchor="middle" fill="#9A8156"
+        font-size="19" letter-spacing="2">All prices in USD &#183; 24 hours&#8217; notice on cakes</text>
+</svg>

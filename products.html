@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ======================================================================
+       TEMPLATE TODO — change these before you go live
+       ----------------------------------------------------------------------
+       1. Replace every "https://www.example.com" below with your own domain.
+       2. Rewrite <title> and the description to name YOUR bakery and YOUR town.
+       3. In the block below, fill in your real address, hours and prices, and
+          add your phone number as   "telephone": "+15035550142",
+       4. Do the same in the other three pages, then in sitemap.xml + robots.txt.
+       A step-by-step walkthrough is in  docs/index.html.
+       ====================================================================== -->
+
+  <title>Cake Menu &amp; Prices — Rosewood Bakery, Portland</title>
+  <meta name="description"
+    content="The full menu and prices at Rosewood Bakery in Portland. Chocolate, red velvet, black forest and mango cakes from $38, mini cakes from $24, brownies from $4.50 and cookies from $14.">
+  <link rel="canonical" href="https://www.example.com/products.html">
+  <meta name="theme-color" content="#170D07">
+  <meta name="robots" content="index, follow">
+
+  <!-- how this page looks when shared on Facebook, WhatsApp, iMessage, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rosewood Bakery">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://www.example.com/products.html">
+  <meta property="og:title" content="Cake Menu &amp; Prices — Rosewood Bakery, Portland">
+  <meta property="og:description"
+    content="The full menu and prices at Rosewood Bakery in Portland. Chocolate, red velvet, black forest and mango cakes from $38, mini cakes from $24, brownies from $4.50 and cookies from $14.">
+  <meta property="og:image" content="https://www.example.com/assets/images/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cake Menu &amp; Prices — Rosewood Bakery, Portland">
+  <meta name="twitter:description"
+    content="The full menu and prices at Rosewood Bakery in Portland. Chocolate, red velvet, black forest and mango cakes from $38, mini cakes from $24, brownies from $4.50 and cookies from $14.">
+  <meta name="twitter:image" content="https://www.example.com/assets/images/og-cover.jpg">
+
+  <!-- Tells Google you are a bakery, where you are and what you charge. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "@id": "https://www.example.com/#bakery",
+    "name": "Rosewood Bakery",
+    "description": "Small-batch bakery in Portland making cakes, mini cakes, brownies, cookies and loaf cakes to order.",
+    "slogan": "Freshly Baked With Love",
+    "url": "https://www.example.com/",
+    "logo": "https://www.example.com/assets/images/logo.svg",
+    "image": "https://www.example.com/assets/images/og-cover.jpg",
+    "email": "hello@example.com",
+    "telephone": "+15035550142",
+    "priceRange": "$4.50 - $52",
+    "servesCuisine": ["Cakes", "Bakery", "Desserts"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1420 Maple Avenue, Suite 3",
+      "addressLocality": "Portland",
+      "postalCode": "97205",
+      "addressRegion": "OR",
+      "addressCountry": "US"
+    },
+    "areaServed": { "@type": "City", "name": "Portland" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday", "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00" }
+    ],
+    "hasMenu": "https://www.example.com/products.html",
+    "makesOffer": [
+      { "@type": "Offer", "name": "Cakes",      "priceCurrency": "USD", "price": "38",   "description": "From $38 per 8-inch cake" },
+      { "@type": "Offer", "name": "Mini Cakes", "priceCurrency": "USD", "price": "24",   "description": "From $24 per box" },
+      { "@type": "Offer", "name": "Brownies",   "priceCurrency": "USD", "price": "4.50", "description": "From $4.50 each" },
+      { "@type": "Offer", "name": "Cookies",    "priceCurrency": "USD", "price": "14",   "description": "From $14 per half dozen" }
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/base.css?v=1">
+  <link rel="stylesheet" href="assets/css/layout.css?v=1">
+  <link rel="stylesheet" href="assets/css/components.css?v=1">
+  <link rel="stylesheet" href="assets/css/animations.css?v=1">
+  <link rel="stylesheet" href="assets/css/pages.css?v=1">
+</head>
+
+<body class="has-dark-hero page-products">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Rosewood Bakery home">
+        <img src="./assets/images/logo.svg" class="mainlogo" alt="">
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link is-active" href="products.html">Products</a>
+        <a class="nav__link" href="about.html">About Us</a>
+        <a class="nav__link" href="contact.html">Contact Us</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--gold btn--sm" data-link="order" href="#" target="_blank" rel="noopener">Order Now</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="navDrawer" aria-hidden="true">
+    <div class="nav-drawer__inner">
+      <nav class="nav-drawer__list" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a class="is-active" href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <div class="nav-drawer__meta">
+        <p class="script" style="font-size:1.7rem">Life is sweeter with home baked goodies</p>
+        <a class="btn btn--gold" style="margin-top:1.4rem" data-link="order" href="#" target="_blank"
+          rel="noopener">Order on <span data-config="orderLabel">WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ====================================================================
+       BANNER
+       ==================================================================== -->
+    <section class="page-banner grain">
+      <div class="container page-banner__inner">
+        <span class="eyebrow is-centered" data-reveal="fade">The full menu</span>
+        <h1 data-split>Everything we bake</h1>
+        <p class="lead" data-reveal="up" data-delay="300">
+          Twenty-four items, five categories, one standard. Filter by what you are craving,
+          or search for a flavour by name.
+        </p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">&middot;</span>
+          <span aria-current="page">Products</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+       CATALOGUE
+       ==================================================================== -->
+    <section class="section section--tight">
+      <div class="container">
+
+        <div class="filter-bar">
+          <div class="filter-tabs" id="filterTabs" role="group" aria-label="Filter by category"></div>
+          <label class="search-field">
+            <span class="sr-only">Search the menu</span>
+            <span data-icon="search"></span>
+            <input type="search" id="productSearch" placeholder="Search a flavour…" autocomplete="off">
+          </label>
+        </div>
+
+        <p class="results-note" id="resultsNote" role="status"></p>
+
+        <div class="product-grid" id="productGrid"><!-- rendered from data.js --></div>
+
+        <div class="note-strip" style="margin-top:clamp(2.5rem,5vw,3.5rem)" data-reveal="up">
+          <span data-icon="clock"></span>
+          <span><strong>24 hours&rsquo; notice</strong> for cakes and loaf cakes; brownies and cookies are
+            often available same day.</span>
+          <span data-icon="leaf"></span>
+          <span><strong>Eggless on request</strong> for most items — mention it when you order.</span>
+          <span data-icon="pin"></span>
+          <span><strong>Delivery charged separately</strong> by distance, or collect free from the bakery.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+       PRINTED MENU CARD  (image: assets/images/menu-card.svg — editable text file)
+       ==================================================================== -->
+    <section class="section section--cream grain">
+      <div class="container">
+        <div class="menu-showcase">
+          <div class="menu-showcase__img" data-reveal="scale">
+            <img src="assets/images/menu-card.svg"
+              alt="The printed Rosewood Bakery menu card listing cakes, mini cakes, brownies, cookies and loaf cakes with prices"
+              loading="lazy" width="1024" height="1536">
+          </div>
+          <div class="split__copy">
+            <span class="eyebrow" data-reveal="up">The original card</span>
+            <h2 data-reveal="up" data-delay="60">Our menu, exactly as printed</h2>
+            <p class="lead" data-reveal="up" data-delay="120">
+              Every price on this website is taken straight from our menu card — no
+              hidden charges, no surprise mark-ups at checkout.
+            </p>
+            <ul class="custom-panel__list" data-reveal="up" data-delay="180">
+              <li><span data-icon="check"></span><span>Cakes are priced per 8-inch round, loaf cakes per loaf</span>
+              </li>
+              <li><span data-icon="check"></span><span>Brownies are priced each, cookies by the half dozen</span></li>
+              <li><span data-icon="check"></span><span>Customised cakes are quoted on your brief</span></li>
+            </ul>
+            <a class="btn btn--ghost" href="contact.html" data-reveal="up" data-delay="240">
+              Ask about a custom order <span class="btn-icon" data-icon="arrow"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+       CTA
+       ==================================================================== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band grain" data-reveal="rise">
+          <p class="script">Found your flavour?</p>
+          <h2>Let&rsquo;s get it in the oven</h2>
+          <p class="lead">Send us the item, the weight and the date. We will confirm availability
+            and pricing the same day.</p>
+          <div class="cluster" style="justify-content:center">
+            <a class="btn btn--gold" data-link="order" href="#" target="_blank" rel="noopener">
+              <span class="btn-icon" data-icon="order"></span> Order on <span data-config="orderLabel">WhatsApp</span>
+            </a>
+            <a class="btn btn--outline-light" href="contact.html">Use the order form</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-all">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a class="brand" href="index.html">
+            <img src="./assets/images/logo.svg" class="mainlogo" alt="">
+          </a>
+          <p class="footer__about">
+            A small home bakery making cakes, brownies and cookies to order —
+            fresh, hygienic and completely free of preservatives.
+          </p>
+          <div class="footer__socials">
+            <a data-link="order" href="#" target="_blank" rel="noopener" aria-label="Message us"><span
+                data-icon="order"></span></a>
+            <a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram"><span
+                data-icon="instagram"></span></a>
+            <a data-link="facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><span
+                data-icon="facebook"></span></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Explore</h4>
+          <ul class="footer__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Menu</h4>
+          <ul class="footer__list">
+            <li><a href="products.html#cakes">Cakes</a></li>
+            <li><a href="products.html#bento">Mini Cakes</a></li>
+            <li><a href="products.html#brownies">Brownies</a></li>
+            <li><a href="products.html#cookies">Cookies</a></li>
+            <li><a href="products.html#teacakes">Loaf Cakes &amp; Others</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__title">Get in touch</h4>
+          <ul class="footer__list">
+            <li class="footer__contact-item">
+              <span data-icon="phone"></span>
+              <a data-link="tel" href="#"><span data-config="phoneDisplay">+91 98765 43210</span></a>
+            </li>
+            <li class="footer__contact-item">
+              <span data-icon="mail"></span>
+              <a data-link="mail" href="#"><span data-config="email">hello@example.com</span></a>
+            </li>
+            <li class="footer__contact-item">
+              <span data-icon="pin"></span>
+              <span>
+                <span data-config="addressLine1">Home Bakery Studio</span><br>
+                <span data-config="addressLine2">Portland, Oregon</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <img class="footer__watermark" src="./assets/images/logo.svg" aria-hidden="true"></img>
+
+      <div class="footer__bar">
+        <span>&copy; <span data-year>2026</span> Rosewood Bakery. All rights reserved.</span>
+        <span>Freshly baked with love &middot; Portland</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-order" data-link="order" href="#" target="_blank" rel="noopener">
+    <span class="floating-order__icon" data-icon="order"></span>
+    <span>Order now</span>
+  </a>
+
+  <script src="assets/js/data.js?v=1"></script>
+  <script src="assets/js/visuals.js?v=1"></script>
+  <script src="assets/js/scroll.js?v=1"></script>
+  <script src="assets/js/app.js?v=1"></script>
+  <!-- Colour-theme switcher (a deciding tool) — delete this line to remove it -->
+  <script src="assets/js/theme.js?v=1"></script>
+</body>
+
+</html>

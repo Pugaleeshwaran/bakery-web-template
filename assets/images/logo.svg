@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 140" width="300" height="140"
+     role="img" aria-label="Rosewood Bakery">
+  <title>Rosewood Bakery</title>
+
+  <!--
+       TEMPLATE LOGO  ·  yours to edit or replace
+
+       EASIEST: swap in your own file. Save it as  assets/images/logo.svg
+       (or logo.png / logo.webp) and update the four <img src="..."> tags in
+       index.html, products.html, about.html and contact.html.
+
+       OR just edit this file in any text editor:
+         · the two <text> lines below hold the wording
+         · the "gold" gradient sets the colour, and both lines follow it
+         · letter-spacing controls how airy the wordmark looks
+
+       It is displayed at 150 x 70, so keep roughly this 2:1 shape.
+       Note: SVG is XML, so never put two hyphens together inside a comment.
+  -->
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E8CC72"/>
+      <stop offset="52%"  stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#A5811A"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="none" stroke="url(#gold)" stroke-width="1.6" stroke-linecap="round">
+    <!-- wheat sprig, left -->
+    <path d="M150 40 C 134 40 124 34 120 25"/>
+    <path d="M137 37.6 c -3.2 -4.4 -3 -7.4 -0.6 -10"/>
+    <path d="M130 34.4 c -3.4 -4.2 -3.4 -7.2 -1.2 -10"/>
+    <path d="M124 30.2 c -3.4 -4 -3.6 -7 -1.6 -9.8"/>
+    <!-- wheat sprig, right -->
+    <path d="M150 40 C 166 40 176 34 180 25"/>
+    <path d="M163 37.6 c 3.2 -4.4 3 -7.4 0.6 -10"/>
+    <path d="M170 34.4 c 3.4 -4.2 3.4 -7.2 1.2 -10"/>
+    <path d="M176 30.2 c 3.4 -4 3.6 -7 1.6 -9.8"/>
+  </g>
+
+  <!-- centre diamond -->
+  <path d="M150 20 l 5 6 -5 6 -5 -6 z" fill="url(#gold)"/>
+
+  <!-- wordmark -->
+  <text x="150" y="88" text-anchor="middle" fill="url(#gold)"
+        font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif"
+        font-size="34" letter-spacing="5.5">ROSEWOOD</text>
+
+  <!-- hairlines either side of the sub word -->
+  <g stroke="url(#gold)" stroke-width="1" opacity=".8">
+    <line x1="60" y1="107" x2="112" y2="107"/>
+    <line x1="188" y1="107" x2="240" y2="107"/>
+  </g>
+
+  <text x="150" y="112" text-anchor="middle" fill="url(#gold)"
+        font-family="Jost, Futura, 'Century Gothic', Helvetica, Arial, sans-serif"
+        font-size="13" letter-spacing="9">BAKERY</text>
+</svg>

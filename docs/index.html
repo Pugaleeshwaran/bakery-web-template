@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rosewood Bakery Template — Documentation</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <style>
+    :root {
+      --ink: #2C2118;
+      --ink-soft: #6B5B48;
+      --gold: #9A7B12;
+      --gold-bg: #FBF3DC;
+      --rose: #8E2436;
+      --paper: #FFFDF8;
+      --panel: #F6EFE2;
+      --line: #E4D8C2;
+      --code-bg: #2B2118;
+      --code-fg: #F0E3CC;
+      --ok: #2E6B44;
+      --warn: #8A5A00;
+      --warn-bg: #FDF4E0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --ink: #F2E9DA;
+        --ink-soft: #B9A88E;
+        --gold: #E0BE55;
+        --gold-bg: #2A2114;
+        --rose: #E08A9A;
+        --paper: #191309;
+        --panel: #221A0F;
+        --line: #3A2E1C;
+        --warn: #E8C177;
+        --warn-bg: #2A2010;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { display: flex; align-items: flex-start; max-width: 1180px; margin: 0 auto; }
+
+    /* ---------------------------------------------------------------- nav */
+    .side {
+      position: sticky;
+      top: 0;
+      flex: 0 0 244px;
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 2.2rem 1rem 3rem 1.4rem;
+      border-right: 1px solid var(--line);
+    }
+
+    .side b {
+      display: block;
+      font-size: .72rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 1.6rem 0 .5rem;
+    }
+
+    .side b:first-of-type { margin-top: .8rem; }
+
+    .side a {
+      display: block;
+      padding: .3rem .55rem;
+      margin-left: -.55rem;
+      border-radius: 6px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .side a:hover { background: var(--panel); color: var(--gold); }
+
+    .brandline {
+      font: 600 1.05rem/1.3 Georgia, "Times New Roman", serif;
+      letter-spacing: .04em;
+      color: var(--gold);
+    }
+
+    .brandline span {
+      display: block;
+      font: 400 .68rem/1.6 inherit;
+      letter-spacing: .22em;
+      color: var(--ink-soft);
+      font-family: -apple-system, "Segoe UI", sans-serif;
+    }
+
+    /* ---------------------------------------------------------------- main */
+    main { flex: 1 1 auto; min-width: 0; padding: 2.4rem clamp(1.1rem, 4vw, 3rem) 6rem; }
+
+    h1 {
+      font: 600 clamp(1.9rem, 4vw, 2.6rem)/1.15 Georgia, "Times New Roman", serif;
+      margin: 0 0 .5rem;
+      letter-spacing: -.01em;
+    }
+
+    h2 {
+      font: 600 1.5rem/1.25 Georgia, "Times New Roman", serif;
+      margin: 3.4rem 0 .9rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 1rem;
+    }
+
+    h3 { font-size: 1.06rem; margin: 2rem 0 .5rem; }
+
+    p, li { color: var(--ink); }
+    .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 62ch; }
+
+    a { color: var(--gold); }
+
+    code {
+      font: .875em/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: .1em .38em;
+    }
+
+    pre {
+      background: var(--code-bg);
+      color: var(--code-fg);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      font: .86rem/1.62 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      max-width: 100%;
+    }
+
+    pre code { background: none; border: 0; padding: 0; color: inherit; font-size: 1em; }
+    .c { color: #9C8F7A; }
+    .s { color: #C6DB8E; }
+    .k { color: #E8B44A; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: .92rem;
+      display: block;
+      overflow-x: auto;
+    }
+
+    th, td { text-align: left; padding: .58rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+    td code { white-space: nowrap; }
+
+    .note, .warn, .tip {
+      border-left: 3px solid var(--gold);
+      background: var(--gold-bg);
+      border-radius: 0 8px 8px 0;
+      padding: .9rem 1.15rem;
+      margin: 1.3rem 0;
+      font-size: .95rem;
+    }
+
+    .warn { border-left-color: var(--warn); background: var(--warn-bg); }
+    .tip { border-left-color: var(--ok); }
+    .note p:first-child, .warn p:first-child, .tip p:first-child { margin-top: 0; }
+    .note p:last-child, .warn p:last-child, .tip p:last-child { margin-bottom: 0; }
+
+    .steps { counter-reset: s; list-style: none; padding: 0; }
+
+    .steps > li {
+      counter-increment: s;
+      position: relative;
+      padding: 0 0 1.1rem 3rem;
+      margin: 0;
+    }
+
+    .steps > li::before {
+      content: counter(s);
+      position: absolute;
+      left: 0;
+      top: -.1rem;
+      width: 2rem;
+      height: 2rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #FFFDF8;
+      font-size: .85rem;
+      font-weight: 600;
+    }
+
+    .check { list-style: none; padding: 0; }
+
+    .check li {
+      position: relative;
+      padding: .28rem 0 .28rem 1.7rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .check li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.05rem;
+    }
+
+    kbd {
+      font: .82em ui-monospace, Consolas, monospace;
+      border: 1px solid var(--line);
+      border-bottom-width: 2px;
+      border-radius: 5px;
+      padding: .08em .42em;
+      background: var(--panel);
+    }
+
+    .toplink { font-size: .8rem; color: var(--ink-soft); text-decoration: none; float: right; margin-top: 1.9rem; }
+
+    @media (max-width: 860px) {
+      .wrap { display: block; }
+      .side {
+        position: static;
+        max-height: none;
+        width: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1.4rem;
+      }
+      .side nav { columns: 2; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <aside class="side">
+    <div class="brandline">Rosewood<span>BAKERY TEMPLATE</span></div>
+    <nav>
+      <b>Getting started</b>
+      <a href="#start">Quick start</a>
+      <a href="#files">What's in the folder</a>
+
+      <b>Your content</b>
+      <a href="#business">Business details</a>
+      <a href="#menu">Menu &amp; prices</a>
+      <a href="#photos">Photos</a>
+      <a href="#hero">The hero slideshow</a>
+      <a href="#text">Page text</a>
+
+      <b>Look &amp; feel</b>
+      <a href="#colours">Colours</a>
+      <a href="#themes">Theme switcher</a>
+      <a href="#fonts">Fonts</a>
+      <a href="#logo">Logo &amp; favicon</a>
+
+      <b>Setup</b>
+      <a href="#orders">Order buttons</a>
+      <a href="#currency">Currency</a>
+      <a href="#seo">SEO</a>
+      <a href="#live">Going live</a>
+
+      <b>Reference</b>
+      <a href="#ids">Every photo name</a>
+      <a href="#fields">Every setting</a>
+      <a href="#trouble">Troubleshooting</a>
+    </nav>
+  </aside>
+
+  <main>
+    <h1>Rosewood — Bakery Website Template</h1>
+    <p class="lead">
+      A four-page bakery website in plain HTML, CSS and JavaScript. No build
+      step, no npm, no database, no framework. Open a file, edit it, save,
+      refresh.
+    </p>
+
+    <div class="tip">
+      <p><b>If you read one thing, read this.</b> Almost everything you want to
+      change — your name, phone, address, hours, the entire menu, every price,
+      the reviews, the FAQ — lives in a single file:
+      <code>assets/js/data.js</code>. Open it in any text editor. It is heavily
+      commented and organised into eight numbered sections.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="start">Quick start <a class="toplink" href="#">top ↑</a></h2>
+
+    <ol class="steps">
+      <li><b>Unzip the folder</b> anywhere on your computer.</li>
+      <li><b>Double-click <code>index.html</code>.</b> The site opens in your
+        browser and works immediately — you do not need a server, an internet
+        connection (beyond fonts) or any software to install.</li>
+      <li><b>Open <code>assets/js/data.js</code></b> in a text editor. Notepad
+        and TextEdit are fine; <a href="https://code.visualstudio.com">VS Code</a>
+        is free and nicer.</li>
+      <li><b>Edit section 1</b> — name, phone, email, address.</li>
+      <li><b>Save, then refresh the browser</b> (<kbd>Ctrl</kbd>+<kbd>R</kbd>,
+        or <kbd>Cmd</kbd>+<kbd>R</kbd> on a Mac). Every page has updated.</li>
+    </ol>
+
+    <div class="warn">
+      <p><b>Changes not showing?</b> Your browser is holding an old copy. Do a
+      hard refresh: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>
+      (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on a Mac). See
+      <a href="#trouble">Troubleshooting</a>.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="files">What's in the folder <a class="toplink" href="#">top ↑</a></h2>
+
+<pre><code>bakery-template/
+├── <span class="k">index.html</span>          <span class="c">Home</span>
+├── <span class="k">products.html</span>       <span class="c">Menu, with search and filters</span>
+├── <span class="k">about.html</span>          <span class="c">Story, values, ingredients</span>
+├── <span class="k">contact.html</span>        <span class="c">Order form, hours, FAQ</span>
+├── <span class="k">404.html</span>            <span class="c">Page-not-found</span>
+├── robots.txt          <span class="c">For search engines</span>
+├── sitemap.xml         <span class="c">For search engines</span>
+├── docs/index.html     <span class="c">This manual</span>
+├── LICENSE.txt  CHANGELOG.md  IMAGE-CREDITS.md
+└── assets/
+    ├── js/
+    │   ├── <span class="k">data.js</span>      <span class="c">← YOUR CONTENT. Start here.</span>
+    │   ├── app.js       <span class="c">Builds the pages from data.js</span>
+    │   ├── visuals.js   <span class="c">Icons, illustrations, image fallbacks</span>
+    │   ├── scroll.js    <span class="c">Scroll animations</span>
+    │   └── theme.js     <span class="c">Colour-theme switcher (optional)</span>
+    ├── css/
+    │   ├── <span class="k">base.css</span>     <span class="c">← COLOURS AND FONTS. All at the top.</span>
+    │   ├── layout.css       components.css
+    │   └── animations.css   pages.css
+    ├── images/          <span class="c">Products, logo, favicon, share image</span>
+    └── hero-bg/         <span class="c">One background photo per page</span></code></pre>
+
+    <p>You will spend nearly all your time in the two files marked above:
+      <code>assets/js/data.js</code> for content, and the top of
+      <code>assets/css/base.css</code> for colours.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="business">Business details <a class="toplink" href="#">top ↑</a></h2>
+
+    <p><b>File:</b> <code>assets/js/data.js</code> → section 1</p>
+
+<pre><code><span class="k">window</span>.BK_CONFIG = {
+  name:    <span class="s">'Rosewood Bakery'</span>,
+  tagline: <span class="s">'Freshly Baked With Love'</span>,
+
+  phoneDisplay: <span class="s">'+1 (503) 555-0142'</span>,   <span class="c">// shown on the page</span>
+  phoneRaw:     <span class="s">'15035550142'</span>,         <span class="c">// digits only, country code first</span>
+  email:        <span class="s">'hello@example.com'</span>,
+
+  addressLine1: <span class="s">'1420 Maple Avenue, Suite 3'</span>,
+  addressLine2: <span class="s">'Portland, OR 97205'</span>,
+  ...
+};</code></pre>
+
+    <div class="warn">
+      <p><b><code>phoneRaw</code> must be digits only, starting with your country
+      code</b>, with no <code>+</code>, spaces, brackets or dashes. It builds the
+      order links, and they silently fail if it is wrong.
+      USA/Canada <code>1</code>, UK <code>44</code>, Australia <code>61</code>,
+      India <code>91</code>. A UK number <code>07700 900123</code> becomes
+      <code>447700900123</code> — the leading 0 is dropped.</p>
+    </div>
+
+    <p><code>phoneDisplay</code> is only ever shown to people, so format it
+      however looks right for your country.</p>
+
+    <h3>Opening hours</h3>
+    <p>Same section. Add, remove or reword rows freely — the contact page draws
+      whatever is in the list. <code>closed: true</code> greys a row out.</p>
+
+<pre><code>hours: [
+  { day: <span class="s">'Monday — Friday'</span>, time: <span class="s">'9:00 AM — 8:00 PM'</span> },
+  { day: <span class="s">'Saturday'</span>,        time: <span class="s">'9:00 AM — 9:00 PM'</span> },
+  { day: <span class="s">'Public holidays'</span>, time: <span class="s">'Pre-orders only'</span>, closed: <span class="k">true</span> }
+],</code></pre>
+
+    <!-- ================================================================= -->
+    <h2 id="menu">Menu &amp; prices <a class="toplink" href="#">top ↑</a></h2>
+
+    <p><b>File:</b> <code>assets/js/data.js</code> → section 4</p>
+
+    <p>Every item is one block. To add a cake, copy an existing block, paste it,
+      and change the values. Nothing else needs updating — the home page, the
+      products grid, the search, the filters and the contact form's dropdown all
+      read from this one list.</p>
+
+<pre><code>{
+  id: <span class="s">'lemon-cake'</span>, name: <span class="s">'Lemon Drizzle Cake'</span>, category: <span class="s">'cakes'</span>,
+  price: <span class="k">44</span>, unit: <span class="s">'8-inch'</span>,
+  desc: <span class="s">'Zesty lemon sponge under a crackly sugar glaze.'</span>,
+  tone: [<span class="s">'#F5E08A'</span>, <span class="s">'#C9A227'</span>], featured: <span class="k">true</span>, badge: <span class="s">'New'</span>
+},</code></pre>
+
+    <table>
+      <tr><th>Field</th><th>Required</th><th>What it does</th></tr>
+      <tr><td><code>id</code></td><td>yes</td><td>Unique, lowercase, hyphens only. Also used to find the photo.</td></tr>
+      <tr><td><code>name</code></td><td>yes</td><td>Shown on the card.</td></tr>
+      <tr><td><code>category</code></td><td>yes</td><td>Must match an <code>id</code> from section 3.</td></tr>
+      <tr><td><code>price</code></td><td>yes</td><td>A plain number. No currency symbol, no quotes. <code>4.5</code> renders as <code>$4.50</code>.</td></tr>
+      <tr><td><code>unit</code></td><td>yes</td><td>Free text after the price: <code>'8-inch'</code>, <code>'each'</code>, <code>'per loaf'</code>.</td></tr>
+      <tr><td><code>desc</code></td><td>yes</td><td>One or two sentences.</td></tr>
+      <tr><td><code>tone</code></td><td>yes</td><td>Two colours. Used to draw an illustration until a real photo exists.</td></tr>
+      <tr><td><code>badge</code></td><td>no</td><td>Small label on the card: <code>'Bestseller'</code>, <code>'New'</code>.</td></tr>
+      <tr><td><code>featured</code></td><td>no</td><td><code>true</code> puts it in "Signatures" on the home page.</td></tr>
+      <tr><td><code>seasonal</code></td><td>no</td><td><code>true</code> marks it as seasonal.</td></tr>
+      <tr><td><code>custom</code></td><td>no</td><td><code>true</code> points the button at the custom-order form.</td></tr>
+    </table>
+
+    <div class="warn">
+      <p><b>Two rules that break the page if you get them wrong.</b>
+      Every block must end with a comma, except you may leave it off the last
+      one. And every apostrophe inside a quoted string must be escaped:
+      write <code>'Baker’s pick'</code> with a curly apostrophe, or
+      <code>"Baker's pick"</code> with double quotes. A straight
+      <code>'</code> inside single quotes ends the string early and the page
+      goes blank. See <a href="#trouble">Troubleshooting</a>.</p>
+    </div>
+
+    <h3>Categories</h3>
+    <p>Section 3 holds the five category cards and the filter tabs. <code>from</code>
+      is the lowest price in that category, shown as "from&nbsp;$38". Keep it in
+      step with your prices — nothing calculates it for you.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="photos">Photos <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>There are two ways, and the first needs no code at all.</p>
+
+    <h3>The easy way — name the file after the item</h3>
+    <p>Drop your photo into <code>assets/images/</code> and name it after the
+      item's <code>id</code>. That is the whole job.</p>
+
+<pre><code>assets/images/red-velvet-cake.webp   <span class="c">→ becomes the Red Velvet Cake photo</span>
+assets/images/classic-brownie.jpg   <span class="c">→ becomes the Classic Brownie photo</span></code></pre>
+
+    <p><code>.webp</code>, <code>.png</code>, <code>.jpg</code> and
+      <code>.jpeg</code> are all tried automatically, in that order. The full
+      list of names is in <a href="#ids">the reference table</a>.</p>
+
+    <h3>The other way — point at a file you already have</h3>
+    <p>If your file is called something else, list it in section 2 of
+      <code>data.js</code>:</p>
+
+<pre><code><span class="k">window</span>.BK_IMAGES = {
+  <span class="s">'red-velvet-cake'</span>: <span class="s">'my-red-velvet-photo.jpg'</span>,
+  ...
+};</code></pre>
+
+    <div class="tip">
+      <p><b>A missing photo can never break the page.</b> If an item has no
+      photo, it falls back to its category photo. If that is missing too, it
+      falls back to a hand-drawn illustration in the item's own colours. You
+      will never see a broken-image icon. Open the browser console
+      (<kbd>F12</kbd>) to see a list of anything that fell back.</p>
+    </div>
+
+    <h3>Sizes and file size</h3>
+    <table>
+      <tr><th>Where</th><th>Good size</th><th>Shape</th></tr>
+      <tr><td>Product &amp; category cards</td><td>800 × 800</td><td>square</td></tr>
+      <tr><td>Hero cake</td><td>1000 × 1000</td><td>square (shown in a circle)</td></tr>
+      <tr><td>Page background (<code>hero-bg/</code>)</td><td>1920 × 1080</td><td>wide</td></tr>
+      <tr><td>Share image (<code>og-cover.jpg</code>)</td><td>1200 × 630</td><td>wide — this size is fixed</td></tr>
+    </table>
+
+    <p>Keep each file under about 200 KB. <a href="https://squoosh.app">Squoosh</a>
+      is free, runs in the browser, and converting to WebP at quality 80 usually
+      cuts a photo by 80–90% with no visible difference.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="hero">The hero slideshow <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>The big round cake on the home page can be a single photo or a slideshow
+      that cross-fades every five seconds. Section 2 of <code>data.js</code>:</p>
+
+<pre><code><span class="c">// one photo — a still picture</span>
+<span class="s">'hero-cake'</span>: <span class="s">'my-best-cake.webp'</span>,
+
+<span class="c">// a list — fades from one to the next every 5 seconds</span>
+<span class="s">'hero-cake'</span>: [
+  <span class="s">'head-coco.webp'</span>,
+  <span class="s">'head-red.webp'</span>,
+  <span class="s">'head-bendo.webp'</span>
+],
+
+<span class="c">// empty — keeps the built-in hand-drawn cake illustration</span>
+<span class="s">'hero-cake'</span>: <span class="s">''</span>,</code></pre>
+
+    <p>Any number of photos works. Because the image is shown inside a circle,
+      use square photos with the cake centred — anything at the corners gets
+      cropped away.</p>
+
+    <p>To change the five seconds, open <code>assets/js/app.js</code> and edit
+      <code>HERO_INTERVAL</code> near the top of the hero section. It is in
+      milliseconds, so <code>8000</code> is eight seconds.</p>
+
+    <div class="note">
+      <p>The slideshow pauses when the tab is in the background, and it does not
+      run at all for visitors who have "reduce motion" switched on in their
+      operating system. Both are deliberate.</p>
+    </div>
+
+    <h3>Page background photos</h3>
+    <p>Each page has its own background, set in <code>assets/css/base.css</code>:</p>
+
+<pre><code>body.page-home     { --banner-image: url('../hero-bg/hero-home.webp'); }
+body.page-products { --banner-image: url('../hero-bg/hero-products.webp'); }
+body.page-about    { --banner-image: url('../hero-bg/hero-about.webp'); }
+body.page-contact  { --banner-image: url('../hero-bg/hero-contact.webp'); }</code></pre>
+
+    <p>Replace those files, keeping the same names, and nothing else changes.
+      Two variables just below control how much dark veil sits over them —
+      <code>--banner-veil</code> and <code>--hero-veil</code>. Lower numbers show
+      more photo; higher numbers keep the text more readable. Check both themes
+      after changing them.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="text">Page text <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Headings and paragraphs that are unique to one page live in that page's
+      HTML file. Open it in a text editor, use <kbd>Ctrl</kbd>+<kbd>F</kbd> to
+      find the sentence you want to change, and type over it.</p>
+
+    <p>Repeated content is generated from <code>data.js</code> instead:</p>
+
+    <table>
+      <tr><th>On the page</th><th>Comes from</th></tr>
+      <tr><td>Category cards, product cards, filters, search</td><td>sections 3 and 4</td></tr>
+      <tr><td>"Why choose us" — the six icon cards</td><td>section 5</td></tr>
+      <tr><td>Reviews</td><td>section 6</td></tr>
+      <tr><td>"How we bake" — the four-step story</td><td>section 7</td></tr>
+      <tr><td>FAQ accordion</td><td>section 8</td></tr>
+      <tr><td>Name, phone, email, address, hours</td><td>section 1</td></tr>
+    </table>
+
+    <div class="warn">
+      <p><b>Demo content to replace before you go live.</b> Search the HTML files
+      for <code>TEMPLATE TODO</code> — every spot is marked. The big ones are the
+      three reviews (section 6 of <code>data.js</code>), the four statistics on
+      the home and about pages, and the founder quote on the about page. They are
+      invented for the demo, and publishing invented reviews or statistics as
+      your own is illegal in many countries.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="colours">Colours <a class="toplink" href="#">top ↑</a></h2>
+
+    <p><b>File:</b> <code>assets/css/base.css</code>, the block right at the top.</p>
+
+    <p>Every colour in the design comes from that one block, so changing a
+      variable there changes it everywhere at once.</p>
+
+<pre><code>:root {
+  --gold:      #C9A227;   <span class="c">accent — buttons, prices, rules</span>
+  --gold-rgb:  201, 162, 39;
+  --espresso:  #170D07;   <span class="c">darkest background</span>
+  --cream:     #FBF3E4;   <span class="c">light sections</span>
+  --wine:      #8E2436;   <span class="c">secondary accent</span>
+  ...
+}</code></pre>
+
+    <div class="warn">
+      <p><b>Change both lines for a colour that has an <code>-rgb</code>
+      twin.</b> <code>--gold</code> is used directly; <code>--gold-rgb</code> is
+      used to build see-through versions like
+      <code>rgba(var(--gold-rgb), .4)</code>. If you change one and not the
+      other, glows and borders keep the old colour. Convert your hex with any
+      "hex to rgb" search — <code>#C9A227</code> is <code>201, 162, 39</code>.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="themes">Theme switcher <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>The template ships with two finished themes and a floating swatch in the
+      corner to flip between them:</p>
+
+    <table>
+      <tr><th>Theme</th><th>Look</th></tr>
+      <tr><td>Default</td><td>Dark espresso and gold. Rich, evening, premium.</td></tr>
+      <tr><td>Blush</td><td>Light pink, cream and gold. Soft, romantic, daytime.</td></tr>
+    </table>
+
+    <p>The switcher is a <b>decision tool for you</b>, not really a feature for
+      your customers. Once you have chosen, remove it — a live business site
+      showing visitors a theme picker looks unfinished.</p>
+
+    <ol class="steps">
+      <li>Open the site and click the swatch until you have the theme you want.</li>
+      <li>Note which one it is. To make it the permanent default, open
+        <code>assets/css/base.css</code> and move that theme's colour values into
+        the main <code>:root</code> block.</li>
+      <li>Delete this line from <b>all five</b> HTML files:
+        <code>&lt;script src="assets/js/theme.js?v=1"&gt;&lt;/script&gt;</code></li>
+    </ol>
+
+    <p>Leaving <code>theme.js</code> in place is harmless if you want visitors to
+      be able to switch. Their choice is remembered in their own browser.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="fonts">Fonts <a class="toplink" href="#">top ↑</a></h2>
+
+    <table>
+      <tr><th>Font</th><th>Used for</th></tr>
+      <tr><td>Cormorant Garamond</td><td>Headings</td></tr>
+      <tr><td>Great Vibes</td><td>Script accents</td></tr>
+      <tr><td>Jost</td><td>Body and UI text</td></tr>
+    </table>
+
+    <p>They load from Google Fonts. To swap one, pick a font at
+      <a href="https://fonts.google.com">fonts.google.com</a>, copy its
+      <code>&lt;link&gt;</code> tag into all five HTML files in place of the
+      existing one, then update the font name in <code>assets/css/base.css</code>
+      (search for <code>--font-</code>).</p>
+
+    <div class="note">
+      <p>To make the site work fully offline, download the font files, put them
+      in <code>assets/fonts/</code>, and replace the Google Fonts
+      <code>&lt;link&gt;</code> with a local <code>@font-face</code> block. All
+      three fonts are under the SIL Open Font Licence, which permits this.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="logo">Logo &amp; favicon <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Both are SVG files — plain text you can open in a text editor.</p>
+
+    <table>
+      <tr><th>File</th><th>Shown</th><th>Size</th></tr>
+      <tr><td><code>assets/images/logo.svg</code></td><td>Header, footer, about page</td><td>150 × 70 (about 2:1)</td></tr>
+      <tr><td><code>assets/images/favicon.svg</code></td><td>Browser tab</td><td>square</td></tr>
+      <tr><td><code>assets/images/menu-card.svg</code></td><td>Products page</td><td>1024 × 1536 (2:3)</td></tr>
+    </table>
+
+    <p>To edit the wording, open the file and change the text inside the
+      <code>&lt;text&gt;</code> tags. To use your own logo instead, save it as
+      <code>logo.svg</code> (or <code>logo.png</code>) and update the
+      <code>&lt;img src="..."&gt;</code> tags — there are three or four in each
+      HTML file, so search for <code>logo.</code> in each.</p>
+
+    <div class="warn">
+      <p><b>SVG is XML.</b> Never put two hyphens next to each other inside an
+      SVG comment. It is legal in HTML and illegal in XML, and the whole file
+      silently refuses to render.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="orders">Order buttons <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Every "Order Now" button, the floating bubble and the contact form all use
+      the same channel, set in section 1 of <code>data.js</code>:</p>
+
+<pre><code>orderChannel: <span class="s">'whatsapp'</span>,   <span class="c">// 'whatsapp' | 'sms' | 'phone'</span>
+orderLabel:   <span class="s">'WhatsApp'</span>,   <span class="c">// the wording shown on the buttons</span></code></pre>
+
+    <table>
+      <tr><th>Setting</th><th>What happens when someone taps</th><th>Suggested label</th></tr>
+      <tr><td><code>'whatsapp'</code></td><td>WhatsApp opens with the message already typed</td><td><code>'WhatsApp'</code></td></tr>
+      <tr><td><code>'sms'</code></td><td>The phone's text app opens with the message already typed</td><td><code>'text'</code></td></tr>
+      <tr><td><code>'phone'</code></td><td>Dials your number straight away</td><td><code>'phone'</code></td></tr>
+    </table>
+
+    <p>The links, the visible wording and the icon all follow the setting. In the
+      USA, <code>'sms'</code> is usually the better choice; WhatsApp is the norm
+      in most of the rest of the world.</p>
+
+    <div class="note">
+      <p><b>The contact form does not need a backend.</b> It gathers what the
+      customer typed, builds a tidy order message and hands it to the chosen
+      channel. Nothing is stored, nothing is emailed, and there is no server to
+      pay for or maintain. If you would rather receive orders by email, replace
+      the form's submit handler in <code>assets/js/app.js</code> with a service
+      like Formspree or Netlify Forms.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="currency">Currency <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Section 1 of <code>data.js</code>. Two settings drive every price on the
+      site.</p>
+
+<pre><code>currencySymbol: <span class="s">'$'</span>,
+locale:         <span class="s">'en-US'</span>,</code></pre>
+
+    <table>
+      <tr><th>Country</th><th>Symbol</th><th>Locale</th><th>1250.5 renders as</th></tr>
+      <tr><td>USA</td><td><code>'$'</code></td><td><code>'en-US'</code></td><td>$1,250.50</td></tr>
+      <tr><td>UK</td><td><code>'£'</code></td><td><code>'en-GB'</code></td><td>£1,250.50</td></tr>
+      <tr><td>Germany</td><td><code>'€'</code></td><td><code>'de-DE'</code></td><td>€1.250,50</td></tr>
+      <tr><td>India</td><td><code>'₹'</code></td><td><code>'en-IN'</code></td><td>₹1,250.50</td></tr>
+      <tr><td>Australia</td><td><code>'$'</code></td><td><code>'en-AU'</code></td><td>$1,250.50</td></tr>
+    </table>
+
+    <p>Whole numbers stay whole — <code>38</code> shows as <code>$38</code>, not
+      <code>$38.00</code>. Anything with a fraction gets two decimals, so
+      <code>4.5</code> shows as <code>$4.50</code>.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="seo">SEO <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Each page already carries a title, a description, a canonical URL, Open
+      Graph and Twitter share cards, and <code>Bakery</code> structured data that
+      tells Google your address, hours and prices. All of it is at the top of
+      each HTML file, under a <code>TEMPLATE TODO</code> comment.</p>
+
+    <ol class="steps">
+      <li>In all five HTML files, replace every
+        <code>https://www.example.com</code> with your real domain.</li>
+      <li>Rewrite each <code>&lt;title&gt;</code> and
+        <code>&lt;meta name="description"&gt;</code> to name your bakery and your
+        town. Titles work best around 55–60 characters, descriptions around 150.</li>
+      <li>In the <code>application/ld+json</code> block, fill in your real
+        address, phone, hours and prices. Wrong details here are worse than
+        none — Google shows them to people.</li>
+      <li>Do the same in <code>sitemap.xml</code> and <code>robots.txt</code>.</li>
+      <li>Replace <code>assets/images/og-cover.jpg</code> (1200 × 630) with your
+        own. This is the picture people see when your link is shared.</li>
+      <li>Once you are live, check the structured data at
+        <a href="https://search.google.com/test/rich-results">Google's Rich Results Test</a>,
+        then submit your sitemap in
+        <a href="https://search.google.com/search-console">Search Console</a>.</li>
+    </ol>
+
+    <div class="tip">
+      <p><b>For a local bakery, a Google Business Profile matters more than
+      anything on this list.</b> It is free, it puts you on Maps, and it is what
+      most "bakery near me" searches actually return. Set it up first, then use
+      the same name, address and phone here — matching details across the two
+      is exactly what Google is looking for.</p>
+    </div>
+
+    <!-- ================================================================= -->
+    <h2 id="live">Going live <a class="toplink" href="#">top ↑</a></h2>
+
+    <h3>Hosting</h3>
+    <p>This is a static site, so hosting is free or nearly free. The easiest
+      route: drag the whole folder onto
+      <a href="https://app.netlify.com/drop">Netlify Drop</a>. It is online in
+      about ten seconds, with HTTPS included. Vercel, Cloudflare Pages, GitHub
+      Pages and ordinary cPanel hosting all work the same way — upload the
+      folder, done. There is nothing to install and no database.</p>
+
+    <h3>Checklist</h3>
+    <ul class="check">
+      <li>Searched every file for <code>TEMPLATE TODO</code> and dealt with each one</li>
+      <li>Business name, phone, email and address are real and correct</li>
+      <li><code>phoneRaw</code> is digits only with the country code, and the order button was tested on a real phone</li>
+      <li>Menu and prices match what you actually sell</li>
+      <li>Currency symbol and locale are right for your country</li>
+      <li>Product photos are your own food, not the demo photos</li>
+      <li>The three demo reviews are replaced with real ones, or deleted</li>
+      <li>The four statistics are real, or the block is deleted</li>
+      <li>The founder quote on the about page is yours, or deleted</li>
+      <li>Logo and favicon are yours</li>
+      <li><code>og-cover.jpg</code> is yours</li>
+      <li>Every <code>example.com</code> is replaced with your real domain</li>
+      <li>Titles and descriptions name your bakery and your town</li>
+      <li>Structured data holds your real address, hours and prices</li>
+      <li><code>sitemap.xml</code> and <code>robots.txt</code> updated</li>
+      <li>Theme chosen, and <code>theme.js</code> removed if you do not want the switcher</li>
+      <li>Opened every page on a real phone, not just a narrow browser window</li>
+      <li>Clicked every link and submitted the order form once, end to end</li>
+      <li>Checked the browser console (<kbd>F12</kbd>) for errors</li>
+      <li>Added a privacy policy if your country requires one</li>
+    </ul>
+
+    <!-- ================================================================= -->
+    <h2 id="ids">Every photo name <a class="toplink" href="#">top ↑</a></h2>
+
+    <p>Save a file into <code>assets/images/</code> with one of these names and
+      it appears automatically. Extension can be <code>.webp</code>,
+      <code>.png</code>, <code>.jpg</code> or <code>.jpeg</code>.</p>
+
+    <table>
+      <tr><th>Name the file</th><th>Where it appears</th></tr>
+      <tr><td><code>hero-cake</code></td><td>The big round cake on the home page (or a list — see <a href="#hero">above</a>)</td></tr>
+      <tr><td><code>kitchen</code></td><td>Home page, "a bakery the size of one family kitchen"</td></tr>
+      <tr><td><code>custom-cake</code></td><td>Home page, the "Customised cakes" panel</td></tr>
+      <tr><td><code>step-1</code> … <code>step-4</code></td><td>The four "how an order works" steps. Blank keeps the illustration.</td></tr>
+      <tr><td><code>about-1</code>, <code>about-2</code></td><td>About page. Blank keeps the illustration.</td></tr>
+      <tr><td colspan="2"><b>Category cards</b></td></tr>
+      <tr><td><code>cakes</code> <code>bento</code> <code>brownies</code> <code>cookies</code> <code>teacakes</code></td><td>The five cards on the home page</td></tr>
+      <tr><td colspan="2"><b>Cakes</b></td></tr>
+      <tr><td><code>vanilla-cake</code> <code>chocolate-cake</code> <code>black-forest-cake</code> <code>white-forest-cake</code> <code>red-velvet-cake</code> <code>mango-cake</code> <code>rose-milk-cake</code> <code>blueberry-cake</code> <code>coffee-tres-leches</code></td><td>Product cards</td></tr>
+      <tr><td colspan="2"><b>Mini cakes</b></td></tr>
+      <tr><td><code>vanilla-bento</code> <code>chocolate-bento</code> <code>red-velvet-bento</code> <code>custom-bento</code></td><td>Product cards</td></tr>
+      <tr><td colspan="2"><b>Brownies</b></td></tr>
+      <tr><td><code>classic-brownie</code> <code>nuts-brownie</code> <code>nutella-brownie</code> <code>caramel-brownie</code></td><td>Product cards</td></tr>
+      <tr><td colspan="2"><b>Cookies</b></td></tr>
+      <tr><td><code>choco-chip-cookies</code> <code>double-chocolate-cookies</code> <code>butter-cookies</code></td><td>Product cards</td></tr>
+      <tr><td colspan="2"><b>Loaf cakes</b></td></tr>
+      <tr><td><code>loaf-cake-plain</code> <code>marble-cake</code> <code>chocolate-loaf</code> <code>dry-fruit-cake</code></td><td>Product cards</td></tr>
+    </table>
+
+    <p>If you rename an item's <code>id</code> in <code>data.js</code>, rename
+      its photo to match — or leave the photo and point at it explicitly in
+      section 2.</p>
+
+    <!-- ================================================================= -->
+    <h2 id="fields">Every setting <a class="toplink" href="#">top ↑</a></h2>
+
+    <table>
+      <tr><th>Setting</th><th>Example</th><th>What it controls</th></tr>
+      <tr><td><code>name</code></td><td><code>'Rosewood Bakery'</code></td><td>Header, footer, order messages, share cards</td></tr>
+      <tr><td><code>tagline</code></td><td><code>'Freshly Baked With Love'</code></td><td>Under the logo</td></tr>
+      <tr><td><code>motto</code></td><td><code>'Life is sweeter…'</code></td><td>Hero and footer</td></tr>
+      <tr><td><code>phoneDisplay</code></td><td><code>'+1 (503) 555-0142'</code></td><td>The number people read</td></tr>
+      <tr><td><code>phoneRaw</code></td><td><code>'15035550142'</code></td><td>The number links use. Digits only.</td></tr>
+      <tr><td><code>email</code></td><td><code>'hello@example.com'</code></td><td>Contact page, footer</td></tr>
+      <tr><td><code>addressLine1/2</code></td><td><code>'1420 Maple Avenue'</code></td><td>Contact page, footer</td></tr>
+      <tr><td><code>instagram</code>, <code>facebook</code></td><td>full URL</td><td>Social icons</td></tr>
+      <tr><td><code>currencySymbol</code></td><td><code>'$'</code></td><td>Goes in front of every price</td></tr>
+      <tr><td><code>locale</code></td><td><code>'en-US'</code></td><td>How numbers are grouped</td></tr>
+      <tr><td><code>orderChannel</code></td><td><code>'whatsapp'</code></td><td>Where order buttons go</td></tr>
+      <tr><td><code>orderLabel</code></td><td><code>'WhatsApp'</code></td><td>Wording on those buttons</td></tr>
+      <tr><td><code>hours</code></td><td>a list</td><td>Opening hours on the contact page</td></tr>
+      <tr><td><code>noticeHours</code></td><td><code>24</code></td><td>Minimum notice mentioned in the copy</td></tr>
+    </table>
+
+    <!-- ================================================================= -->
+    <h2 id="trouble">Troubleshooting <a class="toplink" href="#">top ↑</a></h2>
+
+    <h3>The page is blank, or nothing loads</h3>
+    <p>Almost always a typo in <code>data.js</code>. Press <kbd>F12</kbd>, open
+      the <b>Console</b> tab, and read the red message — it names the line
+      number. The three usual culprits:</p>
+    <table>
+      <tr><th>Mistake</th><th>Fix</th></tr>
+      <tr><td>Missing comma between two blocks</td><td>Every block ends with <code>,</code> except the last</td></tr>
+      <tr><td>A straight apostrophe inside single quotes, like <code>'Baker's pick'</code></td><td>Use double quotes, <code>"Baker's pick"</code>, or a curly <code>’</code></td></tr>
+      <tr><td>A missing <code>{</code> <code>}</code> <code>[</code> or <code>]</code></td><td>Undo your last edit and redo it more slowly</td></tr>
+    </table>
+
+    <h3>My changes are not showing</h3>
+    <p>Hard refresh: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>
+      (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> on a Mac). If that fixes it
+      but visitors still see the old version after you upload, bump the version
+      number on the asset links in the HTML — change every <code>?v=1</code> to
+      <code>?v=2</code>. That is exactly what it is for.</p>
+
+    <h3>A photo is not appearing</h3>
+    <ul>
+      <li>Check the filename matches the item's <code>id</code> exactly —
+        lowercase, hyphens, no spaces.</li>
+      <li>Check the extension. <code>.WEBP</code> is not <code>.webp</code> on a
+        real web server, even though it works on Windows.</li>
+      <li>Check it is in <code>assets/images/</code>, not a subfolder.</li>
+      <li>Open the console (<kbd>F12</kbd>) — the template logs what it tried and
+        what it fell back to.</li>
+    </ul>
+
+    <h3>The order button does nothing</h3>
+    <p><code>phoneRaw</code> is wrong. It must be digits only, starting with the
+      country code, with no <code>+</code>, spaces, brackets or dashes. Test on a
+      real phone, not on a desktop — <code>sms:</code> and <code>tel:</code>
+      links do nothing on most desktops.</p>
+
+    <h3>Text is hard to read over my new background photo</h3>
+    <p>In <code>assets/css/base.css</code>, raise <code>--banner-veil</code> and
+      <code>--hero-veil</code> — they darken the photo behind the text. Check
+      both themes; a photo that reads well on the dark theme can wash out on the
+      blush one.</p>
+
+    <h3>Animations feel like too much</h3>
+    <p>Delete <code>&lt;script src="assets/js/scroll.js?v=1"&gt;&lt;/script&gt;</code>
+      from the HTML files. Everything still renders and the layout is unaffected;
+      only the reveal animations stop.</p>
+
+    <p style="margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.9rem">
+      Still stuck? Check <code>CHANGELOG.md</code> for known issues, and
+      <code>IMAGE-CREDITS.md</code> for anything about photos and fonts.
+    </p>
+  </main>
+
+</div>
+</body>
+
+</html>

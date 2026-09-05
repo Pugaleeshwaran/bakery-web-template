@@ -1,0 +1,104 @@
+ROSEWOOD BAKERY WEBSITE TEMPLATE
+Licence agreement
+
+===============================================================================
+NOTE TO THE SELLER  (delete this box before you ship the template)
+-------------------------------------------------------------------------------
+This is a plain-English starting point, not legal advice. Two things to do:
+
+  1. Fill in the placeholders below: [YOUR NAME OR COMPANY], [YOUR EMAIL],
+     [YOUR WEBSITE] and the year.
+
+  2. If you sell through a marketplace (ThemeForest, Creative Market, Etsy,
+     Gumroad and so on), that marketplace usually imposes its OWN licence and
+     it overrides this file. Check their terms and either delete this file or
+     keep it only for direct sales from your own site.
+
+  Also read IMAGE-CREDITS.md before selling. The photographs are licensed
+  separately from the code, and you must confirm you have the right to
+  distribute them.
+===============================================================================
+
+
+1. WHO THIS IS BETWEEN
+
+   "We" / "us" is [YOUR NAME OR COMPANY], the author of this template.
+   "You" is the person or company that purchased it.
+   "The template" means the HTML, CSS, JavaScript, SVG artwork and
+   documentation in this download.
+
+
+2. WHAT YOU MAY DO
+
+   One purchase covers ONE end product. An end product is a finished website
+   that people visit.
+
+   With one licence you may:
+
+   a) Build one website for yourself, and put it online.
+   b) Build one website for one client, and charge that client for your work.
+   c) Modify the template as much as you like — change the code, the design,
+      the colours, the layout, the wording. The result is still covered by
+      this licence.
+   d) Use it for a commercial site, including one that sells things.
+   e) Keep using it forever. This licence does not expire.
+
+   Building a second website means buying a second licence.
+
+
+3. WHAT YOU MAY NOT DO
+
+   a) Resell, re-license, sub-license, give away, or otherwise redistribute
+      the template itself, or any modified version of it, as a template,
+      theme, starter kit, boilerplate or design asset.
+   b) Upload it to any template marketplace, theme shop, code marketplace or
+      file-sharing site.
+   c) Include it in a product where the template is what the customer is
+      buying (a site builder, a page-builder library, a theme bundle).
+   d) Use it to build websites for an unlimited number of clients on one
+      licence.
+   e) Claim you authored the template.
+
+   The rule of thumb: you may sell WEBSITES you build with it. You may not
+   sell the TEMPLATE.
+
+
+4. PHOTOGRAPHS AND FONTS
+
+   The photographs in assets/images/ and assets/hero-bg/ are demo content and
+   are covered by IMAGE-CREDITS.md, not by this licence. Read that file.
+
+   The fonts (Cormorant Garamond, Great Vibes, Jost) are not included in this
+   download. They load from Google Fonts and are covered by the SIL Open Font
+   Licence.
+
+
+5. NO WARRANTY
+
+   The template is provided "as is". We have tested it in current versions of
+   Chrome, Edge, Firefox and Safari, but we do not warrant that it is free of
+   defects or that it will suit any particular purpose.
+
+   To the fullest extent the law allows, we are not liable for any loss of
+   profit, loss of data, business interruption, or any indirect or
+   consequential damage arising from the use of this template. Our total
+   liability is limited to the amount you paid for it.
+
+
+6. SUPPORT
+
+   Questions about setting the template up: [YOUR EMAIL]
+   Support covers the template as shipped. It does not cover custom
+   development, third-party plugins, hosting problems, or code you have
+   modified.
+
+
+7. REFUNDS
+
+   Because this is a digital download that cannot be returned, refunds are
+   handled under the policy of the store you purchased from.
+
+
+-------------------------------------------------------------------------------
+Copyright (c) [YEAR] [YOUR NAME OR COMPANY]. All rights reserved.
+[YOUR WEBSITE]

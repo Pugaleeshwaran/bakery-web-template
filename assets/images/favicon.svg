@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+     role="img" aria-label="Rosewood Bakery">
+  <title>Rosewood Bakery</title>
+
+  <!--
+       FAVICON  ·  the little icon in the browser tab
+
+       Replace this file with your own, or just change the letter in the
+       <text> tag near the bottom and the two colours below.
+       Note: SVG is XML, so never put two hyphens together inside a comment.
+  -->
+
+  <defs>
+    <linearGradient id="fgold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#E8CC72"/>
+      <stop offset="55%"  stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#A5811A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="#241408"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="url(#fgold)" stroke-width="1.4" opacity=".65"/>
+
+  <text x="32" y="43" text-anchor="middle" fill="url(#fgold)"
+        font-family="Cormorant Garamond, Georgia, 'Times New Roman', serif"
+        font-size="36" font-weight="600">R</text>
+</svg>
